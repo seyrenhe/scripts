@@ -1,0 +1,5 @@
+#!/bin/sh
+[ "$ACTION" = ifup ] || exit 0
+[ "$INTERFACE" = wan ] || exit 0
+ip=$(ifconfig pppoe-wan | grep inet | awk '{print $2}' | cut -c 6-)
+logger $ip
