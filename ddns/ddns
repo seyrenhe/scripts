@@ -3,3 +3,16 @@
 [ "$INTERFACE" = wan ] || exit 0
 ip=$(ifconfig pppoe-wan | grep inet | awk '{print $2}' | cut -c 6-)
 logger $ip
+
+# #!/bin/sh
+
+
+# WAN_INTERFACE=$(echo ${INTERFACE} |grep -c wan)
+
+# if [ "$WAN_INTERFACE" -ge "1" ] && [ "$ACTION" = "ifup" ]
+# then
+# sh /mnt/sda2/bin/dnspodddns.sh
+# fi
+# echo 'ok'>/mnt/1.txt
+# echo "$WAN_INTERFACE">>/mnt/1.txt
+# echo "$ACTION">>/mnt/1.txt
